@@ -36,7 +36,7 @@ client = Twilio::REST::Client.new "ACe35b6ac84c30f98a121b13a6bf9f7668", "07fa73a
 
 # Use this method to check if your ENV file is set up
 get "/" do
-  "So this is working finally!"
+  "Hello world!"
 end
 
 get "/from" do
