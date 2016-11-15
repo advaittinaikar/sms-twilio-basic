@@ -62,23 +62,23 @@ end
 
 get '/incoming_sms' do
 
-  # session["counter"] ||= 0
-  # count = session["counter"]
+  session["counter"] ||= 0
+  count = session["counter"]
   
-  # sender = params[:From] || ""
-  # body = params[:Body] || ""
-  # query = body.downcase.strip
+  sender = params[:From] || ""
+  body = params[:Body] || ""
+  query = body.downcase.strip
 
-  # if session["counter"] < 1
-  #   message = "Thanks for your first message. From #{sender} saying #{body}"
-  # else
-  #   message = "Thanks for message number #{ count }. From #{sender} saying #{body}"
-  # end
+  if session["counter"] < 1
+    message = "Thanks for your first message. From #{sender} saying #{body}"
+  else
+    message = "Thanks for message number #{ count }. From #{sender} saying #{body}"
+  end
   
-  # session["counter"] += 1
+  session["counter"] += 1
   
   twiml = Twilio::TwiML::Response.new do |r|
-    r.Message = "Finally received the message!"
+    r.Message = message
   end
 
   twiml.text
