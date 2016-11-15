@@ -61,7 +61,7 @@ end
 
 # Hook this up to your Webhook for SMS/MMS through the console
 
-post '/incoming_sms' do
+get '/incoming_sms' do
 
   session["counter"] ||= 0
   count = session["counter"]
