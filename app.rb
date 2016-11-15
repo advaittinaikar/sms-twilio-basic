@@ -54,6 +54,7 @@ get "/send_sms" do
     :to => "+16462580532",
     :body => "Hey there. This is a test"
   )
+  
   "Sent message"
   
 end
