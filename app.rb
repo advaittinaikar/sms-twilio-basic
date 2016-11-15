@@ -61,14 +61,14 @@ end
 
 # Hook this up to your Webhook for SMS/MMS through the console
 
-get '/incoming_sms' do
+post '/incoming_sms' do
 
   session["counter"] ||= 0
   count = session["counter"]
   
   sender = params[:From] || ""
   body = params[:Body] || ""
-  query = body.downcase.strip
+  body = body.downcase.strip
 
   if session["counter"] < 1
     message = "Thanks for your first message. From #{sender} saying #{body}"
