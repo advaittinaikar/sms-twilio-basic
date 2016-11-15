@@ -82,6 +82,8 @@ get '/incoming_sms' do
     r.Message message
   end
 
+  content_type 'text/xml'
+
   twiml.text
 
 end
