@@ -12,8 +12,8 @@ gem 'json'
 gem 'haml'
 gem 'builder'
 
-
 gem 'twilio-ruby'
 
+gem 'dotenv'
 
 #gem 'giphy'
