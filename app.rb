@@ -31,7 +31,8 @@ enable :sessions
 # for each environment variable
 
 # CREATE A CLient
-client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+client = Twilio::REST::Client.new "ACe35b6ac84c30f98a121b13a6bf9f7668", "07fa73a035ffaf1cddf0c6f24c9835fd"
+
 
 # Use this method to check if your ENV file is set up
 get "/" do
@@ -48,11 +49,11 @@ end
 
 get "/send_sms" do
 
-  # client.account.messages.create(
-  #   :from => ENV["TWILIO_FROM"],
-  #   :to => "+16462580532",
-  #   :body => "Hey there. This is a test"
-  # )
+  client.account.messages.create(
+    :from => ENV["TWILIO_FROM"],
+    :to => "+16462580532",
+    :body => "Hey there. This is a test"
+  )
   
   "Sent message"
   
