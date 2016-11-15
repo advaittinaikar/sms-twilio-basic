@@ -54,7 +54,7 @@ get "/send_sms" do
     :to => "+16462580532",
     :body => "Hey there. This is a test"
   )
-  
+
   "Sent message"
   
 end
@@ -79,7 +79,7 @@ get '/incoming_sms' do
   session["counter"] += 1
   
   twiml = Twilio::TwiML::Response.new do |r|
-    r.Message = message
+    r.Message message
   end
 
   twiml.text
