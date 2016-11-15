@@ -16,4 +16,4 @@ gem 'builder'
 gem 'twilio-ruby'
 
 
-gem 'giphy'
+#gem 'giphy'
